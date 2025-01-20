@@ -17,9 +17,9 @@ import java.util.Scanner;
 
 public class MailService {
     public boolean send(String to, String subject, String m,String file) {
-        String host="fahlaouimohammed@gmail.com";  //← my email address
-        final String user="fahlaouimohammed@gmail.com";//← my email address
-        final String password="vmxq wovh gapu bliz ";//change accordingly   //← my email password
+        String host="chahrokhkhan1965@gmail.com";  //← my email address
+        final String user="chahrokhkhan1965@gmail.com";//← my email address
+        final String password="gvxn rlbt ehec jlnd ";//change accordingly   //← my email password
 
 
 
