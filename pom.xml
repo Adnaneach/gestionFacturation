@@ -15,7 +15,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <groupId>ma.ensa</groupId>
+    <groupId>ma.enim</groupId>
     <artifactId>project</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>project</name>
@@ -161,7 +161,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>ma.ensa</groupId>
+            <groupId>ma.enim</groupId>
             <artifactId>project</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -196,7 +196,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>ma.ensa.project/ma.ensa.project.ApplicationGestionFacturation</mainClass>
+                            <mainClass>ma.enim.project/ma.enim.project.ApplicationGestionFacturation</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

@@ -1,4 +1,4 @@
-module ma.ensa.project {
+module ma.enim.project {
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -23,15 +23,15 @@ module ma.ensa.project {
 //    requires org.apache.pdfbox;
 
 
-    opens ma.ensa.project to javafx.fxml;
-    opens ma.ensa.project.test to org.json;
+    opens ma.enim.project to javafx.fxml;
+    opens ma.enim.project.test to org.json;
 
 
 
-    exports ma.ensa.project;
-    exports ma.ensa.project.entity;
-    exports ma.ensa.project.test;
-    exports ma.ensa.project.controller;
+    exports ma.enim.project;
+    exports ma.enim.project.entity;
+    exports ma.enim.project.test;
+    exports ma.enim.project.controller;
 
-    opens ma.ensa.project.controller to javafx.fxml;
+    opens ma.enim.project.controller to javafx.fxml;
 }
