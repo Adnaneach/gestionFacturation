@@ -22,9 +22,10 @@ import javafx.collections.ObservableList;
 import javafx.stage.StageStyle;
 import lombok.Data;
 import ma.enim.project.ApplicationGestionFacturation;
+import ma.enim.project.entity.DetaileCommande;
+import ma.enim.project.entity.Facture;
 import ma.enim.project.entity.User;
-import ma.enim.project.service.ClientService;
-import ma.enim.project.service.UserService;
+import ma.enim.project.service.*;
 import org.kordamp.bootstrapfx.BootstrapFX;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -88,10 +89,15 @@ public class Client{
 
                 try {
                     System.out.println(Integer.parseInt(delete.getId()));
+                    FactureService factureService=new FactureService();
+                    factureService.deletFactureByCommande(Integer.parseInt(delete.getId()));
+
+                    CommandeService commandeService=new CommandeService()  ;
+
                     clientDao.deleteClient(Integer.parseInt(delete.getId()));
                     Update update=new Update();
                     update.loadClient();
-                } catch (SQLException e) {
+                } catch (SQLException | ClassNotFoundException e) {
                     throw new RuntimeException(e);
                 }
             });

@@ -57,35 +57,41 @@ public class FactureService implements FactureRepo {
 
 
     }
+    public void deletFactureByCommande(int id) throws SQLException {
+        String sql="delete from facture where idCommande=?";
+        PreparedStatement pstmt=con.prepareStatement(sql);
+        pstmt.setInt(1,id);
+        pstmt.executeUpdate();
+    }
 
 
-//    public Commande getCommandeForFacture(int idFacture) throws SQLException {
-//        String sql="select idCommande from FactureCommande where idFacture=?";
-//        PreparedStatement str=con.prepareStatement(sql);
-//        str.setInt(1,idFacture);
-//        ResultSet rs=str.executeQuery();
-//        int commandeids = 0;
-//       if (rs.next()){
-//             commandeids=rs.getInt("idCommande");
+    public Commande getCommandeForFacture(int idFacture) throws SQLException {
+        String sql="select idCommande from FactureCommande where idFacture=?";
+        PreparedStatement str=con.prepareStatement(sql);
+        str.setInt(1,idFacture);
+        ResultSet rs=str.executeQuery();
+        int commandeids = 0;
+       if (rs.next()){
+             commandeids=rs.getInt("idCommande");
+
+        }
+
+
+            String s="select * from Commande where id=?";
+            PreparedStatement st=con.prepareStatement(s);
+            st.setInt(1,commandeids);
+            ResultSet rst=st.executeQuery();
+            Commande c=new Commande();
+            if (rst.next()) {
+                c.setId(rst.getInt("idCommande"));
+                c.setCommandeDate(rst.getDate("Date"));
+                c.setTotalAmount(rst.getFloat("TotalAmount"));
+            }
+
+            return c;
 //
-//        }
-//
-//
-//            String s="select * from Commande where id=?";
-//            PreparedStatement st=con.prepareStatement(s);
-//            st.setInt(1,commandeids);
-//            ResultSet rst=st.executeQuery();
-//            Commande c=new Commande();
-//            if (rst.next()) {
-//                c.setId(rst.getInt("idCommande"));
-//                c.setCommandeDate(rst.getDate("Date"));
-//                c.setTotalAmount(rst.getFloat("TotalAmount"));
-//            }
-//
-//            return c;
-//
-//
-//    }
+
+  }
 
     public boolean deleteFacture(int id) throws SQLException {
 

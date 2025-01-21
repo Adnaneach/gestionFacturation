@@ -143,6 +143,10 @@ public class CommandeService implements CommandeRepo {
     @Override
     public boolean deleteCommande(int id) throws SQLException, ClassNotFoundException {
         PreparedStatement ps=con.prepareCall("Delete from Commande where id=?");
+        FactureService factureService=new FactureService();
+        PaimentService paimentService=new PaimentService();
+        paimentService.deletePaiementByCommmande(id);
+        factureService.deletFactureByCommande(id);
         PreparedStatement ps1=con.prepareCall("SELECT id from detailCommande where idCommande=?");
         ps1.setInt(1,id);
         ResultSet rs1=ps1.executeQuery();

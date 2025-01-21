@@ -43,22 +43,6 @@
 
                 <!-- Table Container -->
                 <VBox styleClass="table-container">
-                    <HBox styleClass="table-header">
-                        <children>
-                            <Label styleClass="section-title" text="Liste des facture"/>
-                            <Region HBox.hgrow="ALWAYS"/>
-
-                            <Button  styleClass="add-button">
-                                <graphic>
-                                    <HBox alignment="CENTER" spacing="5">
-                                        <children>
-                                            <Label text="Ajouter" textFill="WHITE"/>
-                                        </children>
-                                    </HBox>
-                                </graphic>
-                            </Button>
-                        </children>
-                    </HBox>
 
                     <Label fx:id="msg"/>
                     <JFXTreeTableView fx:id="factureTable" minWidth="300" style="-fx-background-color: #FFFFFF;">

@@ -31,10 +31,9 @@ public class Test1 {
 
     @Test
     public void mail() {
-        //kawtar.zouiher.02@gmail.com
-        //bilallaariny01@gmail.com
+
         MailService mailService = new MailService();
-        boolean m = mailService.send("fahlaouimohammed@gmail.com", "test", "chouf lta7t", "C:\\Users\\pc\\Documents\\java2\\GestionFacturation\\project\\src\\main\\resources\\f.pdf");
+        boolean m = mailService.send("chahrokhkhan1965@gmail.com", "test", "test", "C:\\Users\\DELL\\Downloads\\GestionFacturationUp-master\\GestionFacturationUp-master\\project\\src\\main\\resources\\ma\\enim\\project\\facture.pdf");
         Assert.assertTrue(m);
 
     }

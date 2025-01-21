@@ -20,6 +20,18 @@ public class PaimentService implements PaiementRepo {
         connexion=new Connexion();
         con=connexion.getCon();
     }
+    public void deletePaiementByCommmande(int id) throws SQLException{
+        String up="update commande set idPaiement=null where id=?";
+        PreparedStatement psU=con.prepareStatement(up);
+
+        psU.setInt(1,id);
+        psU.executeUpdate();
+        String sql="delete from paiement where idCommande =?";
+        PreparedStatement ps=con.prepareStatement(sql);
+        ps.setInt(1,id);
+        ps.executeUpdate();
+
+    }
     @Override
     public Paiement addPaiement(Paiement paiement, User user) throws SQLException {
 

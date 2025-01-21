@@ -254,6 +254,7 @@ public class commande {
 
 
                 try {
+
                     commandeDao.deleteCommande(Integer.parseInt(delete.getId()));
                     System.out.println(Integer.parseInt(delete.getId()));
                     Update update=new Update();
